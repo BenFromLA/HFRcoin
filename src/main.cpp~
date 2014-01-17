@@ -31,7 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2");
+uint256 hashGenesisBlock("0x7e0c8d07ec09e0eda0f9c5ebf9b6283be0cf485d4fe59680a7e019d2a6862547");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Hfrcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -577,8 +577,8 @@ bool CTransaction::CheckTransaction(CValidationState &state) const
 
     if (IsCoinBase())
     {
-        if (vin[0].scriptSig.size() < 2 || vin[0].scriptSig.size() > 100)
-            return state.DoS(100, error("CTransaction::CheckTransaction() : coinbase script size"));
+      //  if (vin[0].scriptSig.size() < 2 || vin[0].scriptSig.size() > 100)
+        //    return state.DoS(100, error("CTransaction::CheckTransaction() : coinbase script size"));
     }
     else
     {
@@ -2723,7 +2723,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x91384503f1dc841704bb374127f40057b3fa0d73393076c48a1b845f74fa5202");
+        hashGenesisBlock = uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f");
     }
 
     //
@@ -2756,7 +2756,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "bhahz Posté le 15-01-2014 à 21:37:29; J ai reçu un courrier postal de nespresso me confirmant le virement des 70 euros aujourd hui";
+        const char* pszTimestamp = "Arctic Freezer i11 et A11Tag : Arctic Cooling;Publié le 16/01/2014 à 16:02 par Marc Prieur ";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2768,14 +2768,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1389819539;
+        block.nTime    = 1389892254;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084524493;
+        block.nNonce   = 2085016742;
 
         if (fTestNet)
         {
             block.nTime    = 1317798646;
-            block.nNonce   = 2085469145;
+            block.nNonce   = 385270584;
         }
 
         //// debug print
@@ -2783,7 +2783,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xb66b5cfe871878a82ee9541201dfa53fe507c2952cc5df0f60d06d8ad3b9594c"));
+        assert(block.hashMerkleRoot == uint256("0xbac7cc986ef28987c835b347179a44836bf0d3a0ab248f322cdb6b7e154b0d16"));
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)
         {
