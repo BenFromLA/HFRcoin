@@ -31,7 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x7e0c8d07ec09e0eda0f9c5ebf9b6283be0cf485d4fe59680a7e019d2a6862547");
+uint256 hashGenesisBlock("0xf0fa9d4cb443c7e2f57ac035ac48beaf07b178d11608dde222ee485d93ed4914");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Hfrcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2756,7 +2756,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "Arctic Freezer i11 et A11Tag : Arctic Cooling;Publié le 16/01/2014 à 16:02 par Marc Prieur ";
+        const char* pszTimestamp = "J-Kay Posté le 18-01-2014 à 09:56:07 Simon s'accroche bien quand même contre Jo ! 7/6 Tsonga";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2768,13 +2768,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1389892254;
+        block.nTime    = 1390035778;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2085016742;
+        block.nNonce   = 2086206056;
 
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
+            block.nTime    = 1390035778;
             block.nNonce   = 385270584;
         }
 
@@ -2783,7 +2783,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xbac7cc986ef28987c835b347179a44836bf0d3a0ab248f322cdb6b7e154b0d16"));
+        assert(block.hashMerkleRoot == uint256("0xd9b67d8905221349baf3977a4e480a1ace838f02aaf5fc74f06c2c03c91853f2"));
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)
         {
