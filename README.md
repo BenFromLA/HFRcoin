@@ -1,10 +1,13 @@
 Hfrcoin integration/staging tree
 ================================
 
-http://www.hfrcoin.org
+http://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=107837&page=1&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0
+
+http://www.hfrcoin.com
+
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2011-2013 Hfrcoin Developers
+Copyright (c) 2014-2745 Hfrcoin Developers
 
 What is Hfrcoin?
 ----------------
@@ -12,10 +15,10 @@ What is Hfrcoin?
 Hfrcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 2.5 minute block targets
  - subsidy halves in 840k blocks (~4 years)
- - ~84 million total coins
+ - ~1.01 million total coins
 
 The rest is the same as Bitcoin.
- - 50 coins per block
+ - 0.6 coins per block
  - 2016 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
@@ -45,7 +48,7 @@ Developers should expect to rework and resubmit patches if the code doesn't
 match the project's coding conventions (see `doc/coding.txt`) or are
 controversial.
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
+The `master` branch is not regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
 regularly to indicate new official, stable release versions of Hfrcoin.
 
@@ -68,7 +71,7 @@ Unit tests for the core code are in `src/test/`. To compile and run them:
 
 Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
-    qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+    qmake BITCOIN_QT_TEST=1 -o Makefile.test hfrcoin-qt.pro
     make -f Makefile.test
     ./hfrcoin-qt_test
 
